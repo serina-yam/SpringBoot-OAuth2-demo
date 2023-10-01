@@ -6,9 +6,6 @@
 	    <title>Demo</title>
 	    <meta name="description" content=""/>
 	    <meta name="viewport" content="width=device-width"/>
-	    <meta name="_csrf" content="${_csrf.token}"/>
-		<!-- "_csrf.headerName" の デフォルト値は ”X-CSRF-TOKEN" がセットされる -->
-		<meta name="_csrf_header" content="${_csrf.headerName}"/>
 	    <base href="/"/>
 	    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
 	    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -26,7 +23,6 @@
 		</div>
 		<div>
 		    <button onClick="logout()" class="btn btn-primary">Logout</button>
-		    <input type="hidden" name="${_csfr.parameterName}" value="${_csrf.token}">
 	  	</div>
 	</body>
 	
