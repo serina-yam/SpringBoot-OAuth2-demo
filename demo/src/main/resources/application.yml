@@ -4,5 +4,8 @@ spring:
       client:
         registration:
           github:
-            clientId: XXXX
-            clientSecret: XXXXX
+            client-id: your-github-client-id
+            client-secret: your-github-client-secret
+          google:
+            client-id: your-google-client-id
+            client-secret: your-google-client-secret

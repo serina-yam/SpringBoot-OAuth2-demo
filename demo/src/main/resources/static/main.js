@@ -2,18 +2,9 @@
     $("#user").html(data.name);
     $(".unauthenticated").hide()
     $(".authenticated").show()
+}).fail(function() {
+    $(".error").html('An error occurred while fetching the data.(/user)');
 });
-
-/*
-var logout = function() {
-    $.post("/logout", function() {
-    	$("#user").html('');
-    	$(".unauthenticated").show();
-    	$(".authenticated").hide();
-	})
-	return true;
-}
-*/
 
 $.ajaxSetup({
   beforeSend : function(xhr, settings) {
@@ -51,7 +42,18 @@ async function logout() {
     });
 
 	$("#user").html('');
+	$(".error").html('');
 	$(".unauthenticated").show();
 	$(".authenticated").hide();
     console.log(response);
 }
+
+$.get("/error", function(data) {
+    if (data) {
+        $(".error").html(data);
+    } else {
+        $(".error").html('');
+    }
+}).fail(function() {
+    $(".error").html('An error occurred while fetching the data.(/error)');
+});
